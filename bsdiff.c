@@ -395,13 +395,6 @@ int main(int argc,char *argv[])
 	if ((pf = fopen(argv[3], "w")) == NULL)
 		err(1, "%s", argv[3]);
 
-	/* Write header (signature+newsize)*/
-	offtout(newsize, buf);
-	if (fwrite("ENDSLEY/BSDIFF43", 16, 1, pf) != 1 ||
-		fwrite(buf, sizeof(buf), 1, pf) != 1)
-		err(1, "Failed to write header");
-
-
 	stream.opaque = pf;
 	if (bsdiff(old, oldsize, new, newsize, &stream))
 		err(1, "bsdiff");
