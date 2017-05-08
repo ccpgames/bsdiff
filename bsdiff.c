@@ -389,18 +389,18 @@ int main(int argc,char *argv[])
 		((new=malloc(newsize+1))==NULL) ||
 		(lseek(fd,0,SEEK_SET)!=0) ||
 		(read(fd,new,newsize)!=newsize) ||
-		(close(fd)==-1)) err(1,"%s",argv[2]);
+		(close(fd)==-1)) err(2,"%s",argv[2]);
 
 	/* Create the patch file */
 	if ((pf = fopen(argv[3], "w")) == NULL)
-		err(1, "%s", argv[3]);
+		err(3, "%s", argv[3]);
 
 	stream.opaque = pf;
 	if (bsdiff(old, oldsize, new, newsize, &stream))
-		err(1, "bsdiff");
+		err(4, "bsdiff");
 
 	if (fclose(pf))
-		err(1, "fclose");
+		err(5, "fclose");
 
 	/* Free the memory we used */
 	free(old);
