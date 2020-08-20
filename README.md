@@ -8,7 +8,7 @@ algorithm is detailed in his (unpublished) paper, [Naïve Differences of Executa
 website at <http://www.daemonology.net/bsdiff/>.
 
 I maintain this project seperately from Colin's work, with the goal of making
-the core functionality easily embedable in existing projects.
+the core functionality easily embeddable in existing projects.
 
 Contact
 -------
@@ -20,12 +20,12 @@ License
 Copyright 2003-2005 Colin Percival  
 Copyright 2012 Matthew Endsley
 
-This project is governed by the BSD 2-clause license. For details see the file
+This project is governed by the BSD 2-clause license. For details, see the file
 titled LICENSE in the project root folder.
 
 Overview
 --------
-There are two separate libraries in the project, bsdiff and bspatch. Each are
+There are two separate libraries in the project: bsdiff and bspatch. Each are
 self contained in bsdiff.c and bspatch.c The easiest way to integrate is to
 simply copy the c file to your source folder and build it.
 
@@ -82,7 +82,7 @@ Reference
 		
 
 In order to use `bsdiff`, you need to define functions for allocating memory and
-writing binary data. This behavior is controlled by the `stream` parameted
+writing binary data. This behavior is controlled by the `stream` parameter
 passed to to `bsdiff(...)`.
 
 The `opaque` field is never read or modified from within the `bsdiff` function.
